@@ -174,7 +174,12 @@ a {
     color: #1c88d0;
     transition: color .15s linear
 }
-
+.order-1 {
+    order: 1;
+}
+.order-2 {
+    order: 2;
+}
 .container {
     width: 100%;
     padding-right: 15px;
@@ -278,7 +283,10 @@ a {
     flex: 0 0 41.6666666667%;
     max-width: 41.6666666667%;
 }
-
+.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
 .col {
     flex-basis: 0;
     flex-grow: 1;
@@ -641,7 +649,7 @@ header {
     top: 50px;
     left: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 999;
 }
 
 .header-sup {
@@ -3896,6 +3904,7 @@ a.tile-info-img {
 
 .section-page-hero.processing-banner-section {
     top: -80px;
+    overflow-x: hidden;
 }
 
 .section-page-hero .sph-info>* {
@@ -6345,12 +6354,25 @@ a.tile-info-links span {
         flex: 0 0 50%;
         max-width: 50%;
     }
-
+    .col-md-7 {
+        flex: 0 0 58.3333333333%;
+        max-width: 58.3333333333%;
+    }
+    .col-md-5 {
+        flex: 0 0 41.6666666667%;
+        max-width: 41.6666666667%;
+    }
     .col-md-12 {
         flex: 100%;
         max-width: 100%;
     }
-
+    
+    .order-md-1 {
+        order: 1;
+    }
+    .order-md-2 {
+        order: 2;
+    }
 }
 
 @media (min-width:992px) {
@@ -8654,11 +8676,6 @@ a.tile-info-links span {
         padding: 24px 52px
     }
 
-    .btn.btn-img {
-        padding-right: 26px;
-        padding-left: 68px
-    }
-
     .btn.btn-img svg {
         width: 52px;
         height: 52px
@@ -9773,10 +9790,7 @@ a.tile-info-links span {
         padding: 22px 48px
     }
 
-    .btn.btn-img {
-        padding-right: 18px;
-        padding-left: 55px
-    }
+
 
     .btn.btn-img svg {
         width: 48px;
@@ -13997,7 +14011,7 @@ a.tile-info-links span {
 
     .sitd-item .btn-group {
         white-space: normal;
-        text-align: center
+        text-align: center;
     }
 
     .sitd-item .btn-group br {
@@ -14009,7 +14023,8 @@ a.tile-info-links span {
     }
 
     .sitd-item .btn-group a:last-child {
-        margin-bottom: 0
+        margin-bottom: 0;
+        display: block;
     }
 
     .tile-decor {

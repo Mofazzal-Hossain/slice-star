@@ -127,7 +127,7 @@ class Elementor_Dual_Pricing_Widget extends \Elementor\Widget_Base
                                 <a href="faq.html" class="link-angle link-grey">Read FAQs</a>
                             </div>
                         </div>
-                        <div class="col-md-5 order-1 order-md-2">
+                        <div class="col-md-5 col-12 order-1 order-md-2">
                             <div class="tile-decor-wrap tile-decor-wrap-right">
                                 <div class="tile-decor-substrate-wrap tdsw-01 tile-decor-substrate-anim">
                                     <div style="background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/tile-dual-pricing.png);"></div>
@@ -135,7 +135,7 @@ class Elementor_Dual_Pricing_Widget extends \Elementor\Widget_Base
                                 <div class="tile-decor bg-v-gradient-violet">
                                     <div class="tile-decor-content">
                                         <div class="tile-decor-icon"><svg class="icon icon-cash">
-                                                <use xlink:href="css/fonts/icons.svg#cash"></use>
+                                                <use xlink:href="<?php echo get_stylesheet_directory_uri(); ?>/assets/fonts/icons.svg#cash"></use>
                                             </svg></div>
                                         <p class="tile-decor-header">Slice <br>Dual Pricing <br>Program</p>
                                         <p class="tile-decor-desc">Any business that accepts credit cards can benefit from Slice</p>
@@ -155,21 +155,21 @@ class Elementor_Dual_Pricing_Widget extends \Elementor\Widget_Base
                                 <div class="row">
                                     <div class="col-sm-4 tii-item">
                                         <div class="tii-item-icon"><svg class="icon icon-colored-money">
-                                                <use xlink:href="css/fonts/icons.svg#colored-money"></use>
+                                                <use xlink:href="<?php echo get_stylesheet_directory_uri(); ?>/assets/fonts/icons.svg#colored-money"></use>
                                             </svg></div>
                                         <p class="tii-item-header">Cash is King</p>
                                         <p>Even better, your customers are rewarded for paying in cash with a 3.99% discount!</p>
                                     </div>
                                     <div class="col-sm-4 tii-item">
                                         <div class="tii-item-icon"><svg class="icon icon-colored-chart">
-                                                <use xlink:href="css/fonts/icons.svg#colored-chart"></use>
+                                                <use xlink:href="<?php echo get_stylesheet_directory_uri(); ?>/assets/fonts/icons.svg#colored-chart"></use>
                                             </svg></div>
                                         <p class="tii-item-header">A Bigger Slice</p>
                                         <p>You, the business owner, get 100% of the sale!</p>
                                     </div>
                                     <div class="col-sm-4 tii-item">
                                         <div class="tii-item-icon"><svg class="icon icon-colored-presentation">
-                                                <use xlink:href="css/fonts/icons.svg#colored-presentation"></use>
+                                                <use xlink:href="<?php echo get_stylesheet_directory_uri(); ?>/assets/fonts/icons.svg#colored-presentation"></use>
                                             </svg></div>
                                         <p class="tii-item-header">Signs of the Times!</p>
                                         <p>Point-of-purchase pricing and discount signage clearly spell out the process to customers</p>

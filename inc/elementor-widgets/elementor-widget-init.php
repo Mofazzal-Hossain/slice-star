@@ -30,6 +30,7 @@ class Themefic_ThemeDev_Elementor_Widgets
         require_once get_stylesheet_directory() . '/inc/elementor-widgets/Elementor_Processing_Banner_Widget.php';
         require_once get_stylesheet_directory() . '/inc/elementor-widgets/Elementor_Law_Features_Widget.php';
         require_once get_stylesheet_directory() . '/inc/elementor-widgets/Elementor_Dual_Pricing_Widget.php';
+        require_once get_stylesheet_directory() . '/inc/elementor-widgets/Elementor_Services_Widget.php';
     }
 
     // Method to register the widget classes
@@ -44,6 +45,7 @@ class Themefic_ThemeDev_Elementor_Widgets
         \Elementor\Plugin::instance()->widgets_manager->register(new \Elementor_Processing_Banner_Widget());
         \Elementor\Plugin::instance()->widgets_manager->register(new \Elementor_Law_Features_Widget());
         \Elementor\Plugin::instance()->widgets_manager->register(new \Elementor_Dual_Pricing_Widget());
+        \Elementor\Plugin::instance()->widgets_manager->register(new \Elementor_Services_Widget());
     }
 }
 
