@@ -35,67 +35,101 @@ class Elementor_Processing_Fee_Widget extends \Elementor\Widget_Base
         );
 
         $this->add_control(
-            'form_destination_label',
+            'section_title',
             [
-                'label'       => __('Form Destination Label', 'hello-elementor-child'),
-                'type'        => \Elementor\Controls_Manager::TEXT,
-                'default'     => __('Destinations', 'hello-elementor-child'),
+                'label'       => __('Title', 'hello-elementor-child'),
+                'type'        => \Elementor\Controls_Manager::TEXTAREA,
                 'label_block' => true,
+                'default'     => __('Stop paying high processing fees', 'hello-elementor-child'),
                 'dynamic'     => ['active' => true],
             ]
         );
 
         $this->add_control(
-            'form_checkin_label',
+            'section_subtitle',
             [
-                'label'       => __('Form Check-in Label', 'hello-elementor-child'),
-                'type'        => \Elementor\Controls_Manager::TEXT,
-                'default'     => __('Check-In', 'hello-elementor-child'),
+                'label'       => __('Subtitle', 'hello-elementor-child'),
+                'type'        => \Elementor\Controls_Manager::TEXTAREA,
                 'label_block' => true,
-                'dynamic'     => ['active' => true],
-            ]
-        );
-        $this->add_control(
-            'form_checkout_label',
-            [
-                'label'       => __('Form Check-Out Label', 'hello-elementor-child'),
-                'type'        => \Elementor\Controls_Manager::TEXT,
-                'default'     => __('Check-Out', 'hello-elementor-child'),
-                'label_block' => true,
-                'dynamic'     => ['active' => true],
-            ]
-        );
-        $this->add_control(
-            'form_person_label',
-            [
-                'label'       => __('Form Adult Person Label', 'hello-elementor-child'),
-                'type'        => \Elementor\Controls_Manager::TEXT,
-                'default'     => __('Adult Person', 'hello-elementor-child'),
-                'label_block' => true,
-                'dynamic'     => ['active' => true],
-            ]
-        );
-        $this->add_control(
-            'form_child_label',
-            [
-                'label'       => __('Form Child Label', 'hello-elementor-child'),
-                'type'        => \Elementor\Controls_Manager::TEXT,
-                'default'     => __('Children', 'hello-elementor-child'),
-                'label_block' => true,
-                'dynamic'     => ['active' => true],
-            ]
-        );
-        $this->add_control(
-            'form_search_label',
-            [
-                'label'       => __('Form Search Label', 'hello-elementor-child'),
-                'type'        => \Elementor\Controls_Manager::TEXT,
-                'default'     => __('Search Now', 'hello-elementor-child'),
-                'label_block' => true,
+                'default'     => __('Start using Zero cost processing to the merchant solution today!', 'hello-elementor-child'),
                 'dynamic'     => ['active' => true],
             ]
         );
 
+
+        $process_fee_list = new \Elementor\Repeater();
+
+        $process_fee_list->add_control(
+            'process_fee_text',
+            [
+                'label'       => __('Text', 'hello-elementor-child'),
+                'type'        => \Elementor\Controls_Manager::TEXT,
+                'label_block' => true,
+                'dynamic'     => ['active' => true],
+            ]
+        );
+        $this->add_control(
+            'process_fee_list',
+            [
+                'label'   => __('Processing Fee List', 'hello-elementor-child'),
+                'type'    => \Elementor\Controls_Manager::REPEATER,
+                'fields'  => $process_fee_list->get_controls(),
+                'default' => [
+                    [
+                        'process_fee_text' => __('Easy to start', 'hello-elementor-child'),
+                    ],
+                    [
+                        'process_fee_text' => __('No hidden fees', 'hello-elementor-child'),
+                    ],
+                    [
+                        'process_fee_text' => __('Save from day one', 'hello-elementor-child'),
+                    ],
+                ],
+            ]
+        );
+
+        $this->add_control(
+            'started_btn_label',
+            [
+                'label'       => __('Started Button Label', 'hello-elementor-child'),
+                'type'        => \Elementor\Controls_Manager::TEXT,
+                'label_block' => true,
+                'default'     => __('Get Started', 'hello-elementor-child'),
+                'dynamic'     => ['active' => true],
+            ]
+        );
+
+        $this->add_control(
+            'started_btn_url',
+            [
+                'label'       => __('Started Button URL', 'hello-elementor-child'),
+                'type'        => \Elementor\Controls_Manager::URL,
+                'label_block' => true,
+                'default'     => ['url' => '#'],
+                'dynamic'     => ['active' => true],
+            ]
+        );
+
+        $this->add_control(
+            'expert_btn_label',
+            [
+                'label'       => __('Expert Button Label', 'hello-elementor-child'),
+                'type'        => \Elementor\Controls_Manager::TEXT,
+                'label_block' => true,
+                'default'     => __('Talk To Our Expert Now', 'hello-elementor-child'),
+                'dynamic'     => ['active' => true],
+            ]
+        );
+        $this->add_control(
+            'expert_btn_url',
+            [
+                'label'       => __('Expert Button URL', 'hello-elementor-child'),
+                'type'        => \Elementor\Controls_Manager::URL,
+                'label_block' => true,
+                'default'     => ['url' => '#'],
+                'dynamic'     => ['active' => true],
+            ]
+        );
 
         $this->end_controls_section();
     }
@@ -110,16 +144,32 @@ class Elementor_Processing_Fee_Widget extends \Elementor\Widget_Base
             <div class="container">
                 <div class="row">
                     <div class="cta-wrap">
-                        <h3 class="text-color-darkblue">Stop paying <span class="white-space-nw">high processing fees</span></h3>
-                        <p class="sub-header font-header">Start using Zero cost processing to the merchant solution today!</p>
+                        <?php if (!empty($settings['section_title'])): ?>
+                            <h3 class="text-color-darkblue"><?php echo esc_html($settings['section_title']); ?></h3>
+                        <?php endif; ?>
+                        <?php if (!empty($settings['section_subtitle'])): ?>
+                            <p class="sub-header font-header"><?php echo esc_html($settings['section_subtitle']); ?></p>
+                        <?php endif; ?>
                         <ul class="list-checked block-mb-xs">
-                            <li>Easy to start</li>
-                            <li>No hidden fees</li>
-                            <li>Save from day one</li>
+                            <?php foreach ($settings['process_fee_list'] as $list): ?>
+                                <?php if (!empty($list['process_fee_text'])): ?>
+                                    <li><?php echo esc_html($list['process_fee_text']); ?></li>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
                         </ul>
                         <div class="btn-group">
-                            <a href="zero-fee/processing/quick-start7673.html?us=05" class="btn">Get Started</a><br>
-                            <a href="contact-us.html" class="link-angle">Talk To Our Expert Now</a>
+                            <!-- get started -->
+                            <?php if (!empty($settings['started_btn_label'])): ?>
+                                <a href="<?php echo esc_url($settings['started_btn_url']['url']); ?>" class="btn" <?php echo $settings['started_btn_url']['is_external'] ? 'target="_blank"' : ''; ?>>
+                                    <?php echo esc_html($settings['started_btn_label']); ?>
+                                </a>
+                            <?php endif; ?>
+                            <!-- learn more -->
+                            <?php if (!empty($settings['expert_btn_label'])): ?>
+                                <a href="<?php echo esc_url($settings['expert_btn_url']['url']); ?>" class="link-angle" <?php echo $settings['expert_btn_url']['is_external'] ? 'target="_blank"' : ''; ?>>
+                                    <?php echo esc_html($settings['expert_btn_label']); ?>
+                                </a>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
